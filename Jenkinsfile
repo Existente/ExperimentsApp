@@ -2,7 +2,7 @@ pipeline {
     agent any
 	environment { 
 	
-		GITHUB_TOKEN = credentials('GitHubToken') 
+		GITHUB_TOKEN = credentials('GitHubToken')  
 		
 		}
 
