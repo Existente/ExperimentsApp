@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building...'
+                echo 'Building En rama distinta de main...'
                 // Comandos para construir el proyecto
                 sh 'echo "Compilando el proyecto..."'
             }
