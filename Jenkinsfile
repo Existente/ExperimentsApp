@@ -3,7 +3,7 @@ pipeline {
 	environment { 
 	
 		GITHUB_TOKEN = credentials('GitHubToken')  
-		BRANCH_NAME = DEFAULT
+		BRANCH_NAME = "DEFAULT"
 		}
 
     stages {
