@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building En rama distinta de main...'
+                echo 'Building $BRANCH_NAME...'
                 // Comandos para construir el proyecto
                 sh 'echo "Compilando el proyecto..."'
             }
