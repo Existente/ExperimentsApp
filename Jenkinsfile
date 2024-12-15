@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building $env.BRANCH_NAME..."
-                // Comandos para construir el proyecto
+                
                 make build
             }
         }
