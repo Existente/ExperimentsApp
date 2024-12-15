@@ -1,7 +1,6 @@
 pipeline {
     agent any
 	environment { 
-	
 		GITHUB_TOKEN = credentials('GitHubToken')  
 		BRANCH_NAME = "DEFAULT"
 		}
@@ -9,16 +8,16 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building $BRANCH_NAME...'
+                echo "Building $env.BRANCH_NAME..."
                 // Comandos para construir el proyecto
-                sh 'echo "Compilando el proyecto..."'
+                make build
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing...'
                 // Comandos para ejecutar pruebas
-                sh 'echo "Ejecutando pruebas..."'
+                make unit-tests
             }
         }
         stage('Deploy') {
@@ -32,13 +31,13 @@ pipeline {
 
     post {
         always {
-            echo 'This will always run'
+            make clean
         }
         success {
-            echo 'This will run only if the pipeline succeeds'
+            echo 'Success!!!'
         }
         failure {
-            echo 'This will run only if the pipeline fails'
+            echo 'Failure!!!'
         }
     }
 }
